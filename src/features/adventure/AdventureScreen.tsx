@@ -179,7 +179,7 @@ export function AdventureScreen({ engine }: Props) {
               npc={npc}
               npcId={npcId || undefined}
               onNext={nextDialogue}
-              showNext={dialogueIndex < (scene.dialogue?.length || 0) - 1}
+              showNext={dialogueIndex <= (scene.dialogue?.length || 0) - 1}
             />
           )}
 
