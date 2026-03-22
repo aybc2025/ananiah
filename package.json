@@ -1,0 +1,45 @@
+{
+  "name": "ananiah-quest",
+  "version": "1.0.0",
+  "private": true,
+  "description": "מסע אל אוצר הכוכבים — הרפתקת תפקידים קסומה לילדים",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "type-check": "tsc --noEmit",
+    "story:validate": "tsx src/tools/validateStory.ts",
+    "story:upload": "tsx src/tools/uploadStory.ts"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "zustand": "^4.5.2",
+    "framer-motion": "^11.0.0",
+    "howler": "^2.2.4",
+    "firebase": "^10.12.0",
+    "idb": "^8.0.0",
+    "lottie-react": "^2.4.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@types/howler": "^2.2.11",
+    "@vitejs/plugin-react": "^4.3.0",
+    "typescript": "^5.4.5",
+    "vite": "^5.3.0",
+    "vite-plugin-pwa": "^0.20.0",
+    "workbox-precaching": "^7.1.0",
+    "workbox-routing": "^7.1.0",
+    "workbox-strategies": "^7.1.0",
+    "tailwindcss": "^3.4.4",
+    "postcss": "^8.4.38",
+    "autoprefixer": "^10.4.19",
+    "eslint": "^9.5.0",
+    "@typescript-eslint/eslint-plugin": "^7.13.0",
+    "@typescript-eslint/parser": "^7.13.0",
+    "tsx": "^4.15.0"
+  }
+}
