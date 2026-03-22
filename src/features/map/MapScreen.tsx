@@ -9,6 +9,7 @@ interface Props { engine: StoryEngine; }
 export function MapScreen({ engine }: Props) {
   const visitedScenes = useGameStore((s) => s.visitedScenes);
   const currentScene = useGameStore((s) => s.currentScene);
+  const setScreen = useGameStore((s) => s.setScreen);
 
   return (
     <div className="relative min-h-screen">
@@ -55,7 +56,8 @@ export function MapScreen({ engine }: Props) {
 
             return (
               <div key={node.id} className="absolute text-center"
-                style={{ left: `${node.x}%`, top: `${node.y}%`, transform: 'translate(-50%, -50%)' }}>
+                style={{ left: `${node.x}%`, top: `${node.y}%`, transform: 'translate(-50%, -50%)', cursor: current ? 'pointer' : 'default' }}
+                onClick={() => current && setScreen('adventure')}>
                 <div className="flex items-center justify-center transition-all duration-300"
                   style={{
                     width: current ? 36 : 28, height: current ? 36 : 28, borderRadius: '50%',
@@ -73,10 +75,20 @@ export function MapScreen({ engine }: Props) {
                   }}>
                   {revealed || visited ? node.label : '?'}
                 </div>
+                {current && (
+                  <div className="text-[8px] mt-0.5 whitespace-nowrap" style={{ color: '#ffd166' }}>← אתה פה</div>
+                )}
               </div>
             );
           })}
         </div>
+
+        <button
+          onClick={() => setScreen('adventure')}
+          className="w-full mt-4 py-3 rounded-2xl font-bold text-base"
+          style={{ background: '#ffd166', color: '#0d0d2b' }}>
+          ← חזור להרפתקה
+        </button>
       </div>
     </div>
   );
